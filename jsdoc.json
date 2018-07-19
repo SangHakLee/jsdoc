@@ -1,0 +1,38 @@
+{
+    "tags": {
+      "allowUnknownTags": false
+    },
+    "source": {
+      "include": "./jsdoc", // 주석을 읽을 파일명이나 디렉토리명 배열
+      "includePattern": ".js$", // 읽을 파일의 패턴
+      "exclude": ["./docs"], // 제외할 파일명이나 디렉토리명 배열
+      "excludePattern": "(node_modules/|docs)" // 제외할 파일의 패턴
+    },
+    "plugins": [
+      "node_modules/jsdoc/plugins/markdown"
+    ],
+    "markdown":{
+        "idInHeadings": true
+    },
+    "opts": {
+      "template": "node_modules/countly-docdash", // 다운받은 템플릿 경로
+      "encoding": "utf8",
+      "destination": "./docs", // 문서를 만들 경로
+      "recurse": true,
+      "verbose": true
+    },
+    "templates": {
+      "cleverLinks": false,
+      "monospaceLinks": false,
+      "default": {
+        "outputSourceFiles": true, // jsdoc이 위치한 코드를 링크로 제공할 건지 여부
+        "includeDate": false // 문서 하단에 언제 만들어졌는지 표시 여부
+      }
+    },
+    "docdash": { // docdash 템플릿에서 지원하는 옵션
+      "static": true,
+      "sort": false,
+      "search": true,
+      "collapse": true
+    }
+}

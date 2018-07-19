@@ -1,0 +1,25 @@
+image: node:latest
+
+stages:
+  - build
+  - deploy
+
+cache:
+  paths:
+    - node_modules/
+
+install_dependencies:
+  stage: build
+  script:
+    - npm install
+
+pages:
+  stage: deploy
+  script:
+    - npm run jsdoc
+    - mkdir .public
+    - cp -r docs/* .public
+    - mv .public public
+  artifacts:
+    paths:
+    - public
