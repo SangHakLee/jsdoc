@@ -9,7 +9,8 @@ cache:
 
 pages:
   stage: deploy
-  only: master
+  only: 
+    - master
   script:
     - npm install
     - npm run jsdoc
