@@ -3,12 +3,15 @@
  */
 class User {
 	/**
-	 * Create a user
+	 * Create a user. Use {@link User#greeting} to greeting.
+	 * @constructs
 	 * @param {string} name 이름
 	 * @param {?number} age 나이
 	 */
 	constructor(name, age) {
+		/** @member {string} */
 		this.name = name
+		/** @member {number} */
 		this.age = age
 	}
 

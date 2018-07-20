@@ -5,11 +5,14 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "jsdoc": "jsdoc -c jsdoc.json README.md -r"
+    "jsdoc": "rm -rf docs && jsdoc -c jsdoc.json --readme README.md"
   },
   "repository": {
     "type": "git",
     "url": "git@gitlab.com:SangHakLee/jsdoc.git"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org"
   },
   "keywords": [
     "jsdoc",
